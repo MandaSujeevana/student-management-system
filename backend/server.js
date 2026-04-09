@@ -1,8 +1,8 @@
 const neo4j = require("neo4j-driver");
 
 const driver = neo4j.driver(
-    "neo4j+s://28f8c951.databases.neo4j.io", 
-    neo4j.auth.basic("neo4j", "6rgdwy4deMjR5-U9kFBO4jjQqhUTTe9nV0vqTFgrgAk")
+    "neo4j+s://28f8c951.databases.neo4j.io",
+    neo4j.auth.basic("neo4j", "webassignment23")
 );
 const express=require("express");
 const cors=require("cors");
