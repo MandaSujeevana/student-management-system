@@ -36,7 +36,7 @@ app.post("/add-student", async (req, res) => {
         res.json({ message: "Student saved to database ✅" });
 
     } catch (error) {
-        console.log(error);
+        console.error("Neo4j Error:", error);
         res.status(500).json({ message: "Error saving student" });
     } finally {
         await session.close();
@@ -63,7 +63,7 @@ app.get("/get-students", async (req, res) => {
         res.json(students);
 
     } catch (error) {
-        console.log(error);
+        console.error("Neo4j Error:", error);
         res.status(500).json({ message: "Error fetching students" });
     } finally {
         await session.close();
@@ -86,7 +86,7 @@ app.delete("/delete-student/:email", async (req, res) => {
         res.json({ message: "Student deleted successfully" });
 
     } catch (error) {
-        console.log(error);
+        console.error("Neo4j Error:", error);
         res.status(500).json({ message: "Error deleting student" });
     } finally {
         await session.close();
@@ -114,7 +114,7 @@ app.post("/login", async (req, res) => {
         }
 
     } catch (error) {
-        console.log(error);
+        console.error("Neo4j Error:", error);
         res.status(500).json({ success: false });
     } finally {
         await session.close();
